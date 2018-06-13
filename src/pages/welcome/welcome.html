@@ -1,0 +1,34 @@
+<ion-content padding id="welcome">
+  <img src="assets/imgs/logo.png" width="128" class="logo"/>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1>Fake finder</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="success" (click)="signup()">Sign up</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-center>
+        <button ion-button full color="lightText" (click)="login()">Log in</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid  style="display: none;">
+    <button ion-button full icon-left (click)="scanCode()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>Scan Code</button>
+  
+    <ion-card *ngIf="scannedCode">
+      <ion-card-content>
+        Result from Scan: {{ scannedCode }}
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+  
+</ion-content>
